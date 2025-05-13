@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -96,6 +99,43 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-oneplus;
+  }
+}
+
+@layer components {
+  .oneplus-btn {
+    @apply px-6 py-3 rounded-md font-medium transition-all duration-300 inline-flex items-center justify-center;
+  }
+  
+  .oneplus-btn-primary {
+    @apply oneplus-btn bg-oneplus-red text-white hover:bg-opacity-90;
+  }
+  
+  .oneplus-btn-secondary {
+    @apply oneplus-btn bg-oneplus-black text-white hover:bg-opacity-80;
+  }
+  
+  .oneplus-btn-outline {
+    @apply oneplus-btn border-2 border-oneplus-red text-oneplus-red hover:bg-oneplus-red hover:text-white;
+  }
+  
+  .nav-link {
+    @apply relative font-medium text-oneplus-darkgray hover:text-oneplus-red transition-colors duration-300
+      after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 
+      after:bg-oneplus-red after:origin-bottom-right after:transition-transform after:duration-300 
+      hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+  
+  .product-card {
+    @apply bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl;
+  }
+  
+  .section-heading {
+    @apply text-3xl md:text-4xl font-bold mb-4 text-oneplus-black;
+  }
+  
+  .section-subheading {
+    @apply text-lg md:text-xl font-medium mb-8 text-gray-600;
   }
 }
